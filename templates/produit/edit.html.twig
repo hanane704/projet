@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire de modification{% endblock %}
+
+{% block body %}
+<br>
+<h1>Formulaire de modification d'un gateau</h1>
+<br>
+
+{{ form(formProduit) }}
+{{ form_start(formProduit) }}
+    
+        {{ form_label(formProduit.titre) }}
+        {{ form_label(formProduit.ingredients) }}
+        {{ form_label(formProduit.valeur) }}
+        {{ form_label(formProduit.prix) }}
+  
+    <br>
+
+    <button type="submit" class="btn btn-warning">Sauvegarder</button>
+{{ form_end(formProduit) }}
+
+{% endblock %}

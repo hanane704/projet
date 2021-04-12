@@ -1,0 +1,25 @@
+{ % extends 'base.html.twig' %}  
+{# {% form_theme formConducteur 'bootstrap_4_layout.html.twig' %} #}
+
+{% block title %}Formulaire d'ajout{% endblock %}
+
+{% block body %}
+{% include('includes/_navbar.html.twig') %}
+<br>
+<h1>Formulaire d'ajout d'un gâteau</h1>
+<br>
+
+{{ form(formProduit) }}
+{{ form_start(formProduit) }}
+    
+        {{ form_label(formProduit.titre) }}
+        {{ form_label(formProduit.ingredients) }}
+        {{ form_label(formProduit.valeur) }}
+        {{ form_label(formProduit.prix) }}
+  
+    <br>
+
+    <button type="submit" class="btn btn-info">Sauvegarder</button>
+{{ form_end(formProduit) }}
+
+{% endblock %}

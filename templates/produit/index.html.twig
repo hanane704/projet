@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pâtisserie{% endblock %}
+{% block body %}
+
+<section>
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+                  <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+                  <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="image/image_3.jpg" class="d-block w-100" alt="photo">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Superbe gâteau </h5>
+                      <p>Vous souhaitez faire plaisir à un supporter ce gâteau est fait pour vous !!!</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="image/image_15.jpg" class="d-block w-100" alt="photo">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Gâteaux à thèmes</h5>
+                      <p>Superbe gâteau </p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="image/image_158.jpg" class="d-block w-100" alt="photo3">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Cupcakes</h5>
+                      <p>Vous souhaitez faire plaisir à un supporter ce Cupcakes est fait pour vous !!!</p>
+                    </div>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </a>
+              </div>
+        {% for message in app.flashes('vehicule_added_success') %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Félicitation : </strong>{{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+        
+        </section>
+{% for message in app.flashes('vehicule_added_success') %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Félicitation : </strong>{{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+{% for message in app.flashes('vehicule_edited_success') %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Félicitation : </strong>{{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+<br>
+<table class="table table-bordered -danger">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">titre</th>
+            <th scope="col">ingredients</th>
+            <th scope="col">valeur</th>
+            <th scope="col">prix</th>
+            <th scope="col">Actions</th>
+          
+        </tr>
+    </thead>
+    <tbody>
+        {% for produit in produits %}
+        <tr>
+            <th scope="row">{{ produit.id }}</th>
+            <td>{{ produit.titre }}</td>
+            <td>{{ produit.ingredients }}</td>
+            <td>{{ produit.valeur }}</td>
+            <td>{{ produit.prix }}</td>
+            <td>
+             <a href="{{ path('produit_edit', {id: produit.id}) }}" class="btn btn-secondary">Modifier</a>
+                <a href="{{ path('produit_show', {id: produit.id}) }}" class="btn btn-primary btn-sm">Afficher</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br>
+
+<a href="{{ path('index') }}" class="btn btn-info">Aller vers les conducteurs</a>
+
+{% endblock %}
+

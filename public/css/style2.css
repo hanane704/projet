@@ -1,0 +1,55 @@
+
+    /******************** Etape 4 : Du contenu au milieu du site ********************/
+    .bleu{ color: #8daab7; }
+    .gras{ font-weight: bold; }
+    .italic{ font-style: italic; }
+    .milieu-haut-gauche{
+    float: left;
+    width: 30%;
+    /* background: yellow; */
+    }
+    .milieu-haut-droite{
+    float: left;
+    width: 70%;
+    font-size: 1.2em;
+    vertical-align: middle;
+    display: table; 
+    line-height: 1.3em;
+    text-align: center;
+    height: 20vh; 
+    /* background: orange; */
+    }
+    .milieu-haut-droite  p{
+    display: table-cell; 
+    vertical-align: middle;
+    }
+    .milieu-gauche{
+    float: left;
+    width: 60%;
+    margin: 1.5em 0 1.5em 0;
+    /*background: #f12f65;*/
+    }
+    .milieu-gauche  h2, .milieu-bas  h2 {
+    color: #8daab7;
+    padding: 0.5em;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    }
+    .milieu-gauche-profil{ float: left; width: 15%; }
+    .milieu-droite-profil{ float: left; margin-left: 5%; width: 80%; padding: 1em 0 0 0; }
+    .milieu-bas-competences{ /*background: green;*/ margin: 3em 0 0 0; }
+    .milieu-bas-competences-design{ width: 21%; float: left; margin-right: 5%; /*background: yellow;*/ text-align: center; min-height: 300px; }
+    .milieu-bas-competences-integration{ width: 21%; float: left; margin-right: 5%; /*background: yellow;*/ text-align: center; min-height: 300px;  }
+    .milieu-bas-competences-developpement{ width: 21%; float: left; margin-right: 5%; /*background: yellow;*/ text-align: center; min-height: 300px;  }
+    .milieu-bas-competences-referencement{ width: 21%; float: left; /*background: yellow;*/ text-align: center; min-height: 300px;  }
+    .milieu-bas-competences  img{transition: 0.5s; }
+    .milieu-bas-competences  img:hover{ transform: rotate(-360deg); }
+    .img-responsive{ width: 100%; }
+    .img-responsive50{ width: 80%; }
+    .img-responsive70{ width: 70%; }
+    .milieu-gauche  ul  li{
+    list-style-type: none;
+    background: url(img/fleche.jpg) left center no-repeat;
+    padding: 0 0 0 30px;
+    margin: 3% 0;
+    }
